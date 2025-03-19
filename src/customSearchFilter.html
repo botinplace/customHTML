@@ -207,6 +207,7 @@
          
          
            input.addEventListener('focus', () => {
+             if(!select.multiple){select.multiple=true;}
              select.style.display = 'block';
              filterOptions();
            });
