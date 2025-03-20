@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ru" >
+   <head itemscope itemtype="http://schema.org/WPHeader">
+      <meta charset="utf-8"/>
+      <title itemprop="headline">Custom search filter (input with select)</title>
+      <meta http-equiv="cleartype" content="on" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+      <meta name="HandheldFriendly" content="True" />
+      <meta name="author" content="botinplace" />
+      <meta name="robots" content="no-index,no-follow">
+      <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+      <meta name="mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+      <meta name="format-detection" content="telephone=no" />
+      <meta name="format-detection" content="address=no" />
+      <noscript>
+         <style>body{overflow:hidden !important;}</style>
+      </noscript>
+      <style>
+         /* Base Style For Example */
+         *{
+         -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+         box-sizing: border-box;
+         margin: 0;
+         padding: 0;
+         max-height: 1000000px;
+         font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+         }
+         html {
+         width: 100%;
+         min-height: 100%;
+         max-height: 1000000px;
+         height:100%;
+         }
+         body {
+         margin: 0;
+         padding: 0;
+         min-height: 100vh;
+         overflow-y: scroll;
+         -ms-text-size-adjust: 100%;
+         -moz-text-size-adjust: 100%;
+         -webkit-text-size-adjust: 100%;
+         font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+         position: relative;
+         -webkit-font-smoothing: subpixel-antialiased;
+         display: flex;
+         flex-direction: column;
+         height: 100%;
+         margin:50px;
+         }
+         .wrapper{
+         display: flex;
+         gap: 50px;    
+         justify-content: center;
+         height: 100%;
+         }
+         /* End Base Style For Example */
+         /* Custom Search Filters Styles */
+         .search-filter{
+         max-width:500px;
+         width:100%;
+         position:relative;
+         }
+         .search-filter select{
+         width: 100%;
+         overflow-y: auto;
+         border: 1px solid #ccc;
+         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+         display: none;
+         -webkit-appearance: none; 
+         -moz-appearance: none;   
+         appearance: none;
+         overflow-y: hidden;
+         width: 100%;
+         margin: 0px auto;
+         background: white;
+         box-shadow: gainsboro 0px 0px 5px;
+         border: 1px solid gainsboro;
+         padding: 0px;
+         outline:none;
+         position:absolute;
+		 left: 0;
+		 -webkit-user-select: none; /* Safari */
+         -ms-user-select: none; /* IE 10 and IE 11 */
+         user-select: none;
+         }
+		 select option:checked {
+				background-color: transparent; /* Прозрачный фон */
+				color: inherit; /* Наследовать цвет текста */
+		  }
+         .search-filter select option{
+         font-size: 14px;
+         cursor: pointer;
+         }
+         .search-filter select option,.search-filter input{
+         width:100%;
+         outline:none;
+         min-height:40px;
+         padding:10px;
+         }
+         .search-filter  select option:hover {
+         background-color: #f1f1f1;
+         }
+         /* End Custom Search Filters Styles */
+      </style>
+   </head>
+   <body>
+      <div class="wrapper">
+         <div class="search-filter">
+            <label>Этот с вводом текста</label>
+			
+            <input type="search" placeholder="Выберите подразделение" />
+			
+            <select>
+               <option value=""></option>
+               <option value="Административно-хозяйственный отдел">Административно-хозяйственный отдел</option>
+               <option value="Акустическая испытательная лаборатория ">Акустическая испытательная лаборатория </option>
+               <option value="Аппарат генерального директора">Аппарат генерального директора</option>
+               <option value="Архив ">Архив </option>
+               <option value="Бухгалтерия">Бухгалтерия</option>
+               <option value="Бюро архива технической документации">Бюро архива технической документации</option>
+               <option value="Бюро внешней приемки">Бюро внешней приемки</option>
+               <option value="Бюро вспомогательных материалов">Бюро вспомогательных материалов</option>
+               <option value="Бюро гидро- и электрооборудования">Бюро гидро- и электрооборудования</option>
+               <option value="Участок №1 ">Участок №1 </option>
+               <option value="Участок №2 ">Участок №2 </option>
+               <option value="Участок №3 ">Участок №3 </option>
+               <option value="Участок №4 ">Участок №4 </option>
+               <option value="Участок №4 (сборочный) ">Участок №4 (сборочный) </option>
+               <option value="Участок №5 ">Участок №5 </option>
+               <option value="Участок №5 (лопаточный) ">Участок №5 (лопаточный) </option>
+               <option value="Участок №6 дефектации и сборки">Участок №6 дефектации и сборки</option>
+               <option value="Финансовый отдел">Финансовый отдел</option>
+               <option value="Хозяйственное бюро">Хозяйственное бюро</option>
+               <option value="Центральная лаборатория измерительной техники">Центральная лаборатория измерительной техники</option>
+               <option value="Центральный материальный склад">Центральный материальный склад</option>
+               <option value="Цех № 16">Цех № 16</option>
+               <option value="Цех № 31">Цех № 31</option>
+               <option value="Экспериментально-производственная лаборатория">Экспериментально-производственная лаборатория</option>
+               <option value="Электромонтажный участок">Электромонтажный участок</option>
+               <option value="Электротехническая  лаборатория">Электротехническая  лаборатория</option>
+               <option value="Электротехническая группа">Электротехническая группа</option>
+               <option value="Юридический отдел">Юридический отдел</option>
+            </select>
+         </div>
+         <div class="search-filter">
+            <label>Этот readonly</label>
+            <input readonly type="search" placeholder="Выберите подразделение" />
+           
+            <select>
+               <option value=""></option>
+               <option value="Административно-хозяйственный отдел">Административно-хозяйственный отдел</option>
+               <option value="Акустическая испытательная лаборатория ">Акустическая испытательная лаборатория </option>
+               <option value="Аппарат генерального директора">Аппарат генерального директора</option>
+               <option value="Архив ">Архив </option>
+               <option value="Бухгалтерия">Бухгалтерия</option>
+               <option value="Бюро архива технической документации">Бюро архива технической документации</option>
+               <option value="Бюро внешней приемки">Бюро внешней приемки</option>
+               <option value="Бюро вспомогательных материалов">Бюро вспомогательных материалов</option>
+               <option value="Бюро гидро- и электрооборудования">Бюро гидро- и электрооборудования</option>
+               <option value="Участок №1 ">Участок №1 </option>
+               <option value="Участок №2 ">Участок №2 </option>
+               <option value="Участок №3 ">Участок №3 </option>
+               <option value="Участок №4 ">Участок №4 </option>
+               <option value="Участок №4 (сборочный) ">Участок №4 (сборочный) </option>
+               <option value="Участок №5 ">Участок №5 </option>
+               <option value="Участок №5 (лопаточный) ">Участок №5 (лопаточный) </option>
+               <option value="Участок №6 дефектации и сборки">Участок №6 дефектации и сборки</option>
+               <option value="Финансовый отдел">Финансовый отдел</option>
+               <option value="Хозяйственное бюро">Хозяйственное бюро</option>
+               <option value="Центральная лаборатория измерительной техники">Центральная лаборатория измерительной техники</option>
+               <option value="Центральный материальный склад">Центральный материальный склад</option>
+               <option value="Цех № 16">Цех № 16</option>
+               <option value="Цех № 31">Цех № 31</option>
+               <option value="Экспериментально-производственная лаборатория">Экспериментально-производственная лаборатория</option>
+               <option value="Электромонтажный участок">Электромонтажный участок</option>
+               <option value="Электротехническая  лаборатория">Электротехническая  лаборатория</option>
+               <option value="Электротехническая группа">Электротехническая группа</option>
+               <option value="Юридический отдел">Юридический отдел</option>
+            </select>
+         </div>
+      </div>
+      <script>
+const MAX_HEIGHT = 10; // Максимальное количество отображаемых option
+const OPTION_HEIGHT = 40; // Высота одной option
+
+const searchFilters = document.querySelectorAll('.search-filter');
+
+searchFilters.forEach((item) => {
+  initCustomFilter(item);
+});
+
+function initCustomFilter(customFilter) {
+  const input = customFilter.querySelector('input');
+  const select = customFilter.querySelector('select');
+
+  input.addEventListener('focus', () => {
+    select.style.display = 'block';
+    filterOptions();
+  });
+
+  function handleBlur(event) {
+    const relatedTarget = event.relatedTarget;
+
+    if (relatedTarget && (relatedTarget === select || select.contains(relatedTarget))) {
+      return;
+    }
+
+    select.style.display = 'none';
+  }
+
+  input.addEventListener('blur', handleBlur);
+  select.addEventListener('blur', handleBlur);
+
+  input.addEventListener('input', filterOptions);
+
+  function filterOptions() {
+    const filterText = input.value.toLowerCase().trim();
+    let visibleCount = 0;
+
+    if (filterText === '') {
+      select.selectedIndex = -1; // Сброс выбора
+      select.scrollTo(0, 0);
+    }
+
+    Array.from(select.options).forEach((option) => {
+      const optionText = option.text.toLowerCase();
+      const isVisible = optionText.includes(filterText) || (input.readOnly && option.value === '');
+      option.style.display = isVisible ? 'block' : 'none';
+
+      if (isVisible) visibleCount++;
+    });
+
+    const calculatedHeight = Math.min(visibleCount, MAX_HEIGHT) * OPTION_HEIGHT;
+	select.size = visibleCount > MAX_HEIGHT ? MAX_HEIGHT : 2;//visibleCount;
+    select.style.height = `${calculatedHeight}px`;
+    select.style.overflowY = visibleCount > MAX_HEIGHT ? 'scroll' : 'hidden';
+  }
+
+  select.addEventListener('change', () => {
+    input.value = select.options[select.selectedIndex].text.trim();
+    select.style.display = 'none';
+  });
+
+  select.addEventListener('mouseup', (event) => {
+    const initialValue = input.value;
+    setTimeout(() => {
+      if (event.target !== select && input.value === initialValue) {
+        select.style.display = 'none';
+      }
+    }, 0);
+  });
+
+  input.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+      const firstVisibleOption = Array.from(select.options).find(
+        (option) => option.style.display !== 'none'
+      );
+      if (firstVisibleOption) {
+        input.value = firstVisibleOption.text.trim();
+        select.style.display = 'none';
+      }
+    }
+  });  
+}
+      </script>
+   </body>
+</html>
